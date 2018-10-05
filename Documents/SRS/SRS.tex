@@ -3,6 +3,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -38,6 +40,7 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 Oct 4,2018 & 1.0 & Project Drivers, Scope\\
+Oct 5,2018 & 1.1 & Added individual use case diagram and function requirements\\
 Date 2 & 1.1 & Notes\\
 \bottomrule
 \end{tabularx}
@@ -91,6 +94,10 @@ Fit criterion: The product shall only operate if an internet connection is prese
 \item Input, User typed in input into Discord community chat.
 \item Song request, to request the bot to play a particular song
 \item Moderate, Administrative duties to maintain community rules and integrity
+\item Kick, to completely remove a user from a community indefinitely
+\item ban, to place restrictions on a user in a community indefinitely 
+\item softban, to place a ban for a short time
+\item stream, to broadcast realtime
 \end{itemize}
 
 \section{Functional Requirements}
@@ -101,11 +108,27 @@ Fit criterion: The product shall only operate if an internet connection is prese
 Project is to produce a Discord bot that is able to automate built-in Discord interfaces and provide additional features. Project is expected to be completed by Winter 2018. The exact details for milestones and goals is under the Development Plan and associated Gantt Chart. 
 
 \subsubsection{Work Partitioning}
-Group members are expected to equally contribute. Work tasks will be discussed and partitioned on a meeting-by-meeting basis. Work tasks will be generated on a weekly basis based on the most current Gantt Chart and Development Plan.
+Group members are expected to equally contribute. Work tasks will be discussed and partitioned on a meeting-by-meeting basis. Work tasks will be generated on a weekly basis based on goals within the most current Gantt Chart and Development Plan.
 
 \subsubsection{Individual Product Use Cases}
+\begin{figure}
+   \centering
+   \includegraphics[width=\linewidth]{UseCaseDiagram.png}
+   \caption{Use Case Diagram}
+  \label{fig:use Case Diagram}
+\end{figure}
 
 \subsection{Functional Requirements}
+\begin{itemize}
+\item The product shall be able to handle music requests and features
+\item The product shall be able to host community trivia
+\item The product shall be able to kick, ban, and softban users
+\item The product shall be able to perform chat cleanup and filtering
+\item The product shall be able to produce stream alerts for streaming platforms
+\item The product shall be able to perform slot machine functionalities
+\item The product shall be able to perform custom commands created by the moderator/owner
+\end{itemize}
+
 
 \section{Non-functional Requirements}
 
