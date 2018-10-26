@@ -1,3 +1,16 @@
+
+## @file main.py
+#  @author Group 31 R-DB V2 (Abdul, Hareem, Jason)
+#  @brief Provides ________
+#  @date 10/25/2018
+
+
+## @brief
+#   Program initializes Discord bot onto server
+#
+
+
+
 import discord
 from imgurpython import ImgurClient
 from discord.ext import commands
@@ -45,10 +58,14 @@ players = {}
 
 # client = discord.Client()
 
+
+## @brief Displays message into Discord server on initialization
 @client.event
 async def on_ready():
     print("Bot is running")
 
+## @brief Bot returns message on receiving a pre-defined message
+#  @param message string
 @client.event
 async def on_message(message):
     if message.author == client.user: 
@@ -56,11 +73,20 @@ async def on_message(message):
     if message.content == "Whats your name?":
         await client.send_message(message.channel, "Red")
 
+
+## @brief Bot to join specified Discord channel in Discord community
+#  @details Joins existing server created by community admins and or moderators
+#  @param ctx integer
 @client.command(pass_context=True)
 async def join(ctx):
     channel = ctx.message.author.voice.voice_channel
     await client.join_voice_channel(channel)
 
+
+## @brief Plays music from Youtube Video in a voice channel
+#  @description Uses the Youtube download library to download an mp3 version of the video
+#  @param ctx context of the command
+#  @param url URL of the YouTube video used
 @client.command(pass_context=True)
 async def play(ctx, url):
     server = ctx.message.server
