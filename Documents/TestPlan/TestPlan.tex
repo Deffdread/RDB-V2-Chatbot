@@ -13,7 +13,7 @@
 }
 \usepackage[round]{natbib}
 
-\title{SE 3XA3: Test Plan\\Title of Project}
+\title{SE 3XA3: Test Plan\\R-DB V2}
 
 \author{Team \#31, R-DB V2
 		\\ Jason Tsui tsuij8
@@ -39,7 +39,7 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 Oct 25, 2018 & 1.0 & Section 1\\
-Date 2 & 1.1 & Notes\\
+Oct 26, 2018 & 1.1 & Section 4\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -198,43 +198,72 @@ How test will be performed:
 
 \section{Tests for Proof of Concept}
 
-\subsection{Area of Testing1}
+\subsection{Integration Testing for Bot}
 		
-\paragraph{Title for Test}
+\paragraph{Integration Tests}
+Testing will focus on implementing our bot and related python scripts to the Discord API and framework.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{test-Initial Function Integration\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Manual Functional System Testing
 					
-Initial State: 
+Initial State: Bot is connected to community server, planning to implement a new functionality to bot
 					
-Input: 
+Input:Command to bot on Discord server
 					
-Output: 
+Output: Bot returns appropriate response or action
 					
-How test will be performed: 
+How test will be performed: Blackbox testing for initial functionalities. Will test every bot command implemented.
 					
-\item{test-id2\\}
+\item{test-Edge cases\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Automated Equivilence Testing
 					
-Initial State: 
+Initial State: Functionional requirement has been implemented to bot with manual testing. Testing is still not thorough to guarantee correctness.
 					
-Input: 
+Input: Edge-cases
 					
-Output: 
+Output: Expected output of select command
 					
-How test will be performed: 
+How test will be performed:  Create test cases and error handling for bot. Then select edge cases for commands and create a script to input commands for testing.
 
 \end{enumerate}
 
-\subsection{Area of Testing2}
+\subsection{Acceptance Testing for Bot}
+		
+\paragraph{Acceptance Tests}
+Testing will focus on non-functional qualities of the bot. Customers will include the development team and members outside of the project to guage effectiveness.
 
-...
+\begin{enumerate}
 
-	
+\item{test-Usability\\}
+
+Type: Manual Functional Testing
+					
+Initial State: Bot is assumed to be correct
+					
+Input: Customer inputs command
+					
+Output: Expected output of customer
+					
+How test will be performed: Customers will be given a sheet of commands to the bot. They will be asked to try some commands. Ease of use and learnability will be measured by customer's qualitative response.
+					
+\item{test-Performance\\}
+
+Type: Automated Functional Testing
+					
+Initial State: Bot is assumed to be correct
+					
+Input: Bot commands
+					
+Output: Bot output
+					
+How test will be performed:  Create a script of bot commands. Run script. Check if commands output at a reasonable speed. 
+
+\end{enumerate}	
+
 \section{Comparison to Existing Implementation}	
 
 With regards to comparing our implementation to the original implementation, we intend on testing the performance comparison by running a series of identical commands on both implementations to see how they perform. As the original implementation does not come with corresponding test files, we do not have a comparison for testing choices, although we have considered the possibility of running a portion of our test plan on the original implementation to see if the overall functionality is the same. Beyond that the results of testing on our own implementation and the comparison to the original will be updated as the project continues to develop. 
