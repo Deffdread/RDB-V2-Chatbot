@@ -231,26 +231,26 @@ How test will be performed:  Create test cases and error handling for bot. Then 
 
 \end{enumerate}
 
-\subsection{Acceptance Testing for Bot}
+\subsection{Structural System Testing for Bot}
 		
-\paragraph{Acceptance Tests}
-Testing will focus on non-functional qualities of the bot. Customers will include the development team and members outside of the project to guage effectiveness.
+\paragraph{Structural System Tests}
+Testing will focus on the structural system of the bot.
 
 \begin{enumerate}
 
-\item{test-Usability\\}
+\item{test-Recovery\\}
 
 Type: Manual Functional Testing
 					
 Initial State: Bot is assumed to be correct
 					
-Input: Customer inputs command
+Input: Input incorrect commands and commands with wrong parameters
 					
-Output: Expected output of customer
+Output: Bot handles errors and returns to ready state
 					
-How test will be performed: Customers will be given a sheet of commands to the bot. They will be asked to try some commands. Ease of use and learnability will be measured by customer's qualitative response.
+How test will be performed: Input incorrect commands and observe if bot is able to return to normal function
 					
-\item{test-Performance\\}
+\item{test-Stress\\}
 
 Type: Automated Functional Testing
 					
@@ -260,7 +260,7 @@ Input: Bot commands
 					
 Output: Bot output
 					
-How test will be performed:  Create a script of bot commands. Run script. Check if commands output at a reasonable speed. 
+How test will be performed:  Create a script of bot commands. Run script. Check if commands output and bot returns to ready state. 
 
 \end{enumerate}	
 
