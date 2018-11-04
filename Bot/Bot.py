@@ -4,7 +4,8 @@ from discord.ext import commands
 #Bot specific code
 TOKEN = 'NTA1ODQ5NDMwODA5NzcyMDMy.DrZmJg.sPGSaZgOM8GgSZvJYQ2MgiThutU'
 
-client = commands.Bot(command_prefix = '.') #Stuff before entering command
+client = commands.Bot(command_prefix = '!') #Stuff before entering command
+
 
 
 #Detects when bot is ready
@@ -22,7 +23,7 @@ async def on_message(message):
 
     if message.content == "botclose":
         client.close()
-
+    await client.process_commands(message)
 
 #Notifies community server when message is deleted
 @client.event
@@ -40,6 +41,21 @@ async def on_message_edit(before,after):
     channel = before.channel
     await client.send_message(channel, 'Message edited by {}'.format(author))#Message channel and message itself
 
+#Saids owner of server
+#!owner
+@client.command()
+async def owner():
+    await client.say('Jason Tsui')
+
+#Sends message to channel
+#!echo
+@client.command()
+async def echo(*args):
+    output = " "
+    for word in args:
+        output = output + word
+        output += " "
+    await client.say(output)
 
 client.run(TOKEN)
 
