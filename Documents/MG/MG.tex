@@ -165,9 +165,7 @@ proposed by \citet{ParnasEtAl1984}.
 \begin{description}
 \item[Secrets:]The data structure and algorithm used to implement the virtual
   hardware.
-\item[Services:]Serves as a virtual hardware used by the rest of the
-  system. This module provides the interface between the hardware and the
-  software. So, the system can use it to display outputs or to accept inputs.
+\item[Services:]This module serves as the interface between the hardware and software of the program. This is done automatically and abstracted by the operating system.
 \item[Implemented By:] OS
 \end{description}
 
@@ -175,25 +173,18 @@ proposed by \citet{ParnasEtAl1984}.
 
 \begin{description}
 \item[Secrets:]The contents of the required behaviours.
-\item[Services:]Includes programs that provide externally visible behaviour of
-  the system as specified in the software requirements specification (SRS)
-  documents. This module serves as a communication layer between the
-  hardware-hiding module and the software decision module. The programs in this
-  module will need to change if there are changes in the SRS.
-\item[Implemented By:] --
+\item[Services:]This module serves as the external interface between the system specified by the software requirements specification and the user. This module acts as a communication layer between the hardware-hiding module and the software decision module. This is done and abstracted by the Discord application and API. 
+\item[Implemented By:] Discord application and API
 \end{description}
 
-\subsubsection{Input Format Module (\mref{mInput})}
+\subsection{Input Format Module}
 
 \begin{description}
 \item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
+\item[Services:]Converts the input data from the behaviour-hiding module into the data structure used by the
   input parameters module.
-\item[Implemented By:] [Your Program Name Here]
+\item[Implemented By:] RD-B V2
 \end{description}
-
-\subsubsection{Etc.}
-
 
 \subsection{Software Decision Module}
 
@@ -202,13 +193,12 @@ proposed by \citet{ParnasEtAl1984}.
   facts, or programming considerations. The secrets of this module are
   \emph{not} described in the SRS.
 \item[Services:] Includes data structure and algorithms used in the system that
-  do not provide direct interaction with the user. 
+  do not provide direct interaction with the user. Performs logical computation and returns output to behaviour-hiding module for output. 
   % Changes in these modules are more likely to be motivated by a desire to
   % improve performance than by externally imposed changes.
-\item[Implemented By:] --
+\item[Implemented By:] RD-B V2
 \end{description}
 
-\subsubsection{Etc.}
 
 \section{Traceability Matrix} \label{SecTM}
 
