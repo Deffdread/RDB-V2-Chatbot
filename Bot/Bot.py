@@ -32,7 +32,7 @@ async def on_message(message):
     author = message.author #who typed the message
     content = message.content #string message typed
     print('{}:{}'.format(author, content)) #prints as author: message into terminal
-    await client.process_commands(message)
+    await client.process_commands(message) #This command stops on_message from blocking commands
 
 
 ## @brief Bot notifies community server when message is deleted
@@ -146,12 +146,76 @@ async def leave(ctx):
 players = {}
 @client.command(pass_context = True)
 async def play(ctx, url):
-    server = ctx.message.server
-    voice_client = client.voice_client_in(server)
-    player = await voice_client.create_ytdl_player(url)
-    players[server.id] = player
-    player.start()
+    global ONEDIT
+    ONEDIT = 1
+    try:
+        server = ctx.message.server
+        voice_client = client.voice_client_in(server) #Instance of the bot in the voice channel
+        player = await voice_client.create_ytdl_player(url, after=lambda: test(server.id)) #Creates yt stream to voice client
+        players[server.id] = player
+        player.start() #Starts player
+    except:
+        await client.say("Bot not in channel, use !join first")
 
+
+## @brief Bot pauses music
+#  @details Must have bot playing music
+@client.command(pass_context=True)
+async def pause(ctx):
+    playerid = ctx.message.server.id
+    players[playerid].pause()    
+
+## @brief Bot stop music
+#  @details Must have bot playing music
+@client.command(pass_context=True)
+async def stop(ctx):
+    playerid = ctx.message.server.id
+    players[playerid].stop()
+
+## @brief Bot resume music
+#  @details Must have bot on pause
+@client.command(pass_context=True)
+async def resume(ctx):
+    playerid = ctx.message.server.id
+    players[playerid].resume()   
+
+## @brief Bot queues music
+#  @details Must have bot on pause
+queues = {}
+@client.command(pass_context=True)
+async def queue(ctx,url):
+    server = ctx.message.server 
+    voice_client = client.voice_client_in(server) #Instance of voice in server
+    player = await voice_client.create_ytdl_player(url) #Creates yt stream to voice client
+    if server.id in queues: #If something already in queue
+        queues[server.id].append(player)
+    else: #Empty queue
+        queues[server.id] = [player]
+    await client.say('Queued successful')
+
+## @brief Helper function to run next music player on queue
+def queue_play(serverid):
+    if queues[serverid] != []:
+        player = queues[serverid].pop(0)
+        players[id] = player
+        player.start()
+'''
+dumbo = []
+@client.command(pass_context=True)
+async def dummy(ctx,url):
+    server = ctx.message.server 
+    voice_client = client.voice_client_in(server) #Instance of voice in server
+    player = await voice_client.create_ytdl_player(url)
+    dumbo.append(player)
+    await client.say(server.id)
+
+## @brief Helper function to run next music player on queue
+def test(serverid):
+    if dumbo != []:
+        player = dumbo.pop(0)
+        players[id] = player
+        player.start()
+'''
 
 ## @brief Bot privately messages user a list of commands the bot supports
 #  @details !help
@@ -171,6 +235,10 @@ async def help(ctx):
     embed.add_field(name = '!join', value = 'Bot joins channel', inline = False)
     embed.add_field(name = '!leave', value = 'Bot leaves channel', inline = False)
     embed.add_field(name = '!play [youtube-url]', value = 'Bot plays youtube music. Bot must first join channel', inline = False)
+    embed.add_field(name = '!pause', value = 'Bot pauses youtube music. Bot must be playing music', inline = False)
+    embed.add_field(name = '!stop', value = 'Bot stops youtube music. Bot must first be playing music', inline = False)
+    embed.add_field(name = '!resume', value = 'Bot resumes youtube music. Bot must first be paused', inline = False)
+    embed.add_field(name = '!queue [youtube-url', value = 'Bot queues youtube music', inline = False)
     await client.send_message(author, embed=embed)
 
 client.run(TOKEN)
