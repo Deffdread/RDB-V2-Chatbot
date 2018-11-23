@@ -8,12 +8,16 @@ from threading import Semaphore
 from discord.ext import commands
 import asyncio
 import youtube_dl
+import json
+import os
 
 #Bot specific code
 TOKEN = 'NTA1ODQ5NDMwODA5NzcyMDMy.DrZmJg.sPGSaZgOM8GgSZvJYQ2MgiThutU'
+#Must change this directory per user for level system
+os.chdir(r'C:\Users\Jason\Desktop\3XA3\se3xa3\Bot')
 
 client = commands.Bot(command_prefix = '!') #Stuff before entering command
-client.remove_command('help') #Removes standard Discord help command
+#client.remove_command('help') #Removes standard Discord help command
 
 #Global variables
 ONDELETE = 0 #Variable for blocking on_message_delete when command !clear is called. 
@@ -34,6 +38,14 @@ async def on_message(message):
     print('{}:{}'.format(author, content)) #prints as author: message into terminal
     await client.process_commands(message) #This command stops on_message from blocking commands
 
+    #For level system
+    with open('users.json','r') as f:
+        users = json.load(f)
+    await update_data(users, message.author)
+    await add_experience(users, message.author, 5)
+    await level_up(users, message.author, message.channel)
+    with open('users.json','w') as f:
+        json.dump(users,f)
 
 ## @brief Bot notifies community server when message is deleted
 #  @details Prints 'Message  deleted by <user>' into server
@@ -45,7 +57,6 @@ async def on_message_delete(message):
         ONDELETE -= 1
         return None
     author = message.author
-    content = message.content 
     channel = message.channel
     await client.send_message(channel, 'Message deleted by {}'.format(author))#Message channel and message itself
 
@@ -62,12 +73,19 @@ async def on_message_edit(before,after):
     channel = before.channel
     await client.send_message(channel, 'Message edited by {}'.format(author))#Message channel and message itself
 
-## @brief Assigns role to new member joining server
+## @brief Assigns role and level to new member joining server
 #  @param member Member that is joining the server
 @client.event
 async def on_member_join(member):
     role = discord.utils.get(member.server.roles, name = 'RoleTest') #Iterate through possible roles
     await client.add_roles(member,role) #Assigns role to member
+
+    #For level system
+    with open('users.json','r') as f:
+        users = json.load(f)
+    await update_data(users,member)
+    with open('users.json','w') as f:
+        json.dump(users,f)
 
 @client.event
 async def on_reaction_add(reaction, user):
@@ -217,10 +235,28 @@ def test(serverid):
         player.start()
 '''
 
+async def update_data(users,member):
+    if not member.id in users:
+        users[member.id] = {}
+        users[member.id]['Experience'] = 0
+        users[member.id]['Level'] = 1
+
+async def add_experience(users, member, exp):
+    users[member.id]['Experience'] += exp
+
+async def level_up(users, member, channel):
+    experience = users[member.id]['Experience']
+    lvl_start = users[member.id]['Level']
+    lvl_end = int(experience**(1/4))
+
+    if lvl_start < lvl_end:
+        await client.send_message(channel, '{} has leveled up to level {}'.format(member.mention, lvl_end))
+        users[member.id]['Level'] = lvl_end
+
 ## @brief Bot privately messages user a list of commands the bot supports
 #  @details !help
 @client.command(pass_context=True)
-async def help(ctx):
+async def helps(ctx):
     global ONEDIT
     ONEDIT = 1
     author = ctx.message.author
