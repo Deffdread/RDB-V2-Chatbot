@@ -169,7 +169,7 @@ async def play(ctx, url):
     try:
         server = ctx.message.server
         voice_client = client.voice_client_in(server) #Instance of the bot in the voice channel
-        player = await voice_client.create_ytdl_player(url, after=lambda: test(server.id)) #Creates yt stream to voice client
+        player = await voice_client.create_ytdl_player(url, after=lambda: queue_play(server.id)) #Creates yt stream to voice client
         players[server.id] = player
         player.start() #Starts player
     except:
