@@ -34,7 +34,7 @@
 \listoftables
 \listoffigures
 
-\begin{table}[bp]
+\begin{table}[!bp]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
@@ -42,7 +42,7 @@
 Oct 4,2018 & 1.0 & Project Drivers, Scope\\
 Oct 5,2018 & 1.1 & Added individual use case diagram and function requirements\\
 Oct 5, 2018 & 1.1 & Added Requirements, cost, risks, user documentation \\
-Oct 16, 2018 & 1.2 & Added more requirements, off-the-shelf solutions, new problems, tasks\\
+Oct 16, 2018 & 1.2 & Added more requirements, off-the-shelf solutions, new problems, tasks\\Dec 04, 2018 & 2.0 & Prepared for final submission \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -121,13 +121,11 @@ Group members are expected to equally contribute. Work tasks will be discussed a
 
 \subsection{Functional Requirements}
 \begin{itemize}
-\item The product shall be able to handle music requests and features
-\item The product shall be able to host community trivia
-\item The product shall be able to kick, ban, and softban users
-\item The product shall be able to perform chat cleanup and filtering
-\item The product shall be able to produce stream alerts for streaming platforms
-\item The product shall be able to perform slot machine functionalities
-\item The product shall be able to perform custom commands created by the moderator/owner
+\color{blue}
+\item FR1: The bot shall be able to handle music requests from YouTube
+\item The bot shall be able to perform chat cleanup and filtering
+\item The bot shall allow users to search for images on Imgur and send them in the channel
+\item The bot shall create a platform where users earn experience points for participation and level up
 \end{itemize}
 
 
@@ -138,9 +136,13 @@ Not applicable, since system being built does not have a GUI.
 \subsection{Usability and Humanity Requirements}
 \begin{itemize}
 \item The software must be simple enough for a person age 12-65 in able condition to use all the features provided and to understand them. 
-\item The user will not be required to remember specific instructions to be able use the software, however the introductory documentation will be provided for initial start up.
+\color{blue}
+\item The user will need to be provided with a list of commands to use
+\color{black}
 \item There is no crucial error rate that will affect the functionality of the software. 
 \item The software will use symbols and words that are understandable to the user community. 
+\color{blue}
+\item All commands will begin with "!"
 \end{itemize}
 
 \subsection{Performance Requirements}
@@ -170,23 +172,26 @@ The software is expected to run on any device that Discord is available on.
 \item The product will not utilize any content (images, text, video, other media) that is considered offensive.
 \item The product will not be offensive to any ethnic groups
 \item The product will not be offensive to any religious groups
-\item The product will disclaim that all similarities to existing figures (political, cultural, etc.,) is entirely coincidental. 
+\color{blue}
+\item The cultural requirements will be upheld by Imgur and Youtube's own community standards policies
 \end{itemize}
 \subsection{Legal Requirements}
 \begin{itemize}
 \item The software will comply with all details entailed with regards to licensing 
 \item All copyright conditions and obligations enforced by law will be met 
-\item Personal information will be handled in a manner that complies with the Canadian Data Protection Act (2018)
 \end{itemize}
 \subsection{Health and Safety Requirements}
-\begin{itemize}
-\item The software will not display any content that can induce photosensitive reactions (such as flashing lights, patterns, visual images, etc.)
-\end{itemize}
+\color{blue} Not available
+\color{black}
 
 \section{Project Issues}
 
 \subsection{Open Issues}
-N/A.
+\begin{itemize}
+\color{blue}
+\item Images modules needs to let users see the image before sending it
+\color{black}
+\end{itemize}
 
 \subsection{Off-the-Shelf Solutions}
 
