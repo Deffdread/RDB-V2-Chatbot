@@ -6,8 +6,10 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{soul}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[normalem]{ulem}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -76,14 +78,15 @@ This a Module Guide document for the project RD-B V2 created group 31 of McMaste
 
 
 \begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acImage}:] Include function to search for images on Imgur.
-\item[\refstepcounter{acnum} \actheacnum \label{acAudio}:] Include functions to play music from YouTube and Spotify.
+\color{blue}
+\item[\refstepcounter{acnum} \actheacnum \label{acAudio}:] Include functions to play music from Spotify.
+\color{black}
 \item[\refstepcounter{acnum} \actheacnum
 \label{acDownloader}:] Allow users of the bot to download functionalities from third-part repositories.
 \item[\refstepcounter{acnum} \actheacnum
 \label{acCustomcom}:] Allow moderator to create custom commands.
 \item[\refstepcounter{acnum} \actheacnum
-\label{acBot}:] Connect to the different modules from the bot module.
+\label{acBot}:] \st{Connect to the different modules from the bot module.}
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -111,17 +114,19 @@ This a Module Guide document for the project RD-B V2 created group 31 of McMaste
 {Hardware-Hiding Module} & ~ \\
 \midrule
 
-\multirow{10}{0.3\textwidth}{Behaviour-Hiding Module} & Alias\\
+\multirow{11}{0.3\textwidth}{Behaviour-Hiding Module} & Alias\\
 & Audio\\
-& CustomCom\\
-& Downloader\\
-& Economy\\
-& General\\
-& Image\\ 
-& Mod\\
-& Owner\\
-& Streams\\
-& Trivia\\
+& \color{blue}Com\\
+& \st{Downloader}\\
+& \st{Economy}\\
+& \color{blue}Bot\\
+& \color{black}Image\\ 
+& \st{Mod}\\
+& \st{Owner}\\
+& \st{Streams}\\
+& \st{Trivia}\\
+& \color{blue} level\\
+& \color{blue} Misc\\
 \midrule
 
 \multirow{1}{0.3\textwidth}{Software Decision Module} & {Bot module}\\
