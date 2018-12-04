@@ -1,3 +1,4 @@
+% stylesheet for doxygen 1.8.14
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{doxygen}
 
