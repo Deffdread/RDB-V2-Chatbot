@@ -1,9 +1,14 @@
+## @file Comm.py
+#  @author Jason Tsui
+#  @brief Implements methods for communication in Discord chat bot.
+#  @date 11/14/2018
+
 import discord
 from discord.ext import commands
 
 
 
-## @brief Class for implementing some communication methods
+## @brief Class for implementing communication methods
 class Comm:
     #Global variables
     ONDELETE = 0 #Variable for blocking on_message_delete when command !clear is called. 
@@ -42,7 +47,7 @@ class Comm:
 
     ## @brief Clears messages in channel
     #  @details Clears <amount> messages in channel. Default is 5 messages after command unless specified. Called by !clears [int]
-    #  @param ctx Previous past message sent into server
+    #  @param ctx Discord chat context
     #  @param amount Number of message to delete. Default is 5.
     @commands.command(pass_context=True)
     async def clear(self, ctx,amount=5):
@@ -56,7 +61,6 @@ class Comm:
 
     
     ## @brief Displays a particular news article fomr news.com.au about blackholes
-    #  @details !blackhole
     @commands.command()
     async def blackhole(self):
         self.ONEDIT = 1

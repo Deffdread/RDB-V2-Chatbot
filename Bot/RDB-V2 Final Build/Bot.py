@@ -1,6 +1,6 @@
-## @file Bot
+## @file Bot.py
 #  @author Jason Tsui
-#  @brief Manages bot related administration and module loading
+#  @brief Initalizes bot client and module loading
 #  @date 9/11/2018
 
 import discord
@@ -24,7 +24,6 @@ client = commands.Bot(command_prefix = '!') #Stuff before entering command
 
 #Implements experience system methods
 level = Level.Level(client)
-
 
 
 ## @brief Detects when bot is ready and outputs into terminal
