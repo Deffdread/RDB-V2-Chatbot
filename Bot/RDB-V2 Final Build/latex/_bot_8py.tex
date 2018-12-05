@@ -1,0 +1,132 @@
+\hypertarget{_bot_8py}{}\section{Bot.\+py File Reference}
+\label{_bot_8py}\index{Bot.\+py@{Bot.\+py}}
+
+
+Initalizes bot client and module loading.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_bot_8py_a2918f0b7bcb1beaed08a60f7c69210e9}\label{_bot_8py_a2918f0b7bcb1beaed08a60f7c69210e9}} 
+def \mbox{\hyperlink{_bot_8py_a2918f0b7bcb1beaed08a60f7c69210e9}{Bot.\+on\+\_\+ready}} ()
+\begin{DoxyCompactList}\small\item\em Detects when bot is ready and outputs into terminal. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{_bot_8py_ab678b66bf3e7340ca728d0762e867a6a}{Bot.\+on\+\_\+message}} (message)
+\begin{DoxyCompactList}\small\item\em Displays messages sent in Discord server into terminal. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{_bot_8py_ad8282b6c07aedb487554b98ca6801b29}{Bot.\+on\+\_\+member\+\_\+join}} (member)
+\begin{DoxyCompactList}\small\item\em Assigns role and level to new member joining server. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{_bot_8py_ae102ddd584d543f2d0094068564d2ac6}{Bot.\+unload}} (extension)
+\begin{DoxyCompactList}\small\item\em Manually loads module(\+Cog) \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{_bot_8py_acfeae851215708c2bafd6930a92e3d36}{Bot.\+load}} (extension)
+\begin{DoxyCompactList}\small\item\em Manually loads module(\+Cog) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_bot_8py_a5fb9dbd2879dffe00dca9c857979c694}\label{_bot_8py_a5fb9dbd2879dffe00dca9c857979c694}} 
+def {\bfseries Bot.\+helps} (ctx)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_bot_8py_a92c9b2ba35a1f025727db66a86c7ec10}\label{_bot_8py_a92c9b2ba35a1f025727db66a86c7ec10}} 
+string {\bfseries Bot.\+T\+O\+K\+EN} = \textquotesingle{}N\+T\+E2\+Mzc4\+O\+D\+U4\+Mzg0\+M\+T\+Mw\+M\+D\+Q4.\+Dtyy6w.\+Gs8\+Y\+Ym6ygz\+M\+P\+Jf\+Eyo\+Pfvie7\+Mv\+Fk\textquotesingle{}
+\item 
+\mbox{\Hypertarget{_bot_8py_a10267e71b023eb1e49f881f9b18647ee}\label{_bot_8py_a10267e71b023eb1e49f881f9b18647ee}} 
+{\bfseries Bot.\+mod} = os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\Hypertarget{_bot_8py_aaf16fa02724da09cf4f25cc4a6d752ef}\label{_bot_8py_aaf16fa02724da09cf4f25cc4a6d752ef}} 
+{\bfseries Bot.\+client} = commands.\+Bot(command\+\_\+prefix = \textquotesingle{}!\textquotesingle{})
+\item 
+\mbox{\Hypertarget{_bot_8py_a259d0ceaa3fc6c2d0257e95693302874}\label{_bot_8py_a259d0ceaa3fc6c2d0257e95693302874}} 
+{\bfseries Bot.\+level} = \mbox{\hyperlink{class_level_1_1_level}{Level.\+Level}}(client)
+\item 
+\mbox{\Hypertarget{_bot_8py_a39ba545b0ddceb2608829cb71e582cef}\label{_bot_8py_a39ba545b0ddceb2608829cb71e582cef}} 
+list {\bfseries Bot.\+extensions} = \mbox{[}\textquotesingle{}Music\textquotesingle{}, \textquotesingle{}Comm\textquotesingle{}, \textquotesingle{}Misc\textquotesingle{}, \textquotesingle{}Image\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{_bot_8py_ab1ee3ca7073422630b983d88fe750be3}{Bot.\+pass\+\_\+context}}
+\begin{DoxyCompactList}\small\item\em Bot privately messages user a list of commands the bot supports. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Initalizes bot client and module loading. 
+
+\begin{DoxyAuthor}{Author}
+Jason Tsui 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+9/11/2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_bot_8py_file_acfeae851215708c2bafd6930a92e3d36}\label{_bot_8py_file_acfeae851215708c2bafd6930a92e3d36}} 
+\index{Bot.\+py@{Bot.\+py}!load@{load}}
+\index{load@{load}!Bot.\+py@{Bot.\+py}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily def Bot.\+load (\begin{DoxyParamCaption}\item[{}]{extension }\end{DoxyParamCaption})}
+
+
+
+Manually loads module(\+Cog) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extension} & name of module to be imported \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_bot_8py_file_ad8282b6c07aedb487554b98ca6801b29}\label{_bot_8py_file_ad8282b6c07aedb487554b98ca6801b29}} 
+\index{Bot.\+py@{Bot.\+py}!on\+\_\+member\+\_\+join@{on\+\_\+member\+\_\+join}}
+\index{on\+\_\+member\+\_\+join@{on\+\_\+member\+\_\+join}!Bot.\+py@{Bot.\+py}}
+\subsubsection{\texorpdfstring{on\+\_\+member\+\_\+join()}{on\_member\_join()}}
+{\footnotesize\ttfamily def Bot.\+on\+\_\+member\+\_\+join (\begin{DoxyParamCaption}\item[{}]{member }\end{DoxyParamCaption})}
+
+
+
+Assigns role and level to new member joining server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em member} & Member that is joining the server \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_bot_8py_file_ab678b66bf3e7340ca728d0762e867a6a}\label{_bot_8py_file_ab678b66bf3e7340ca728d0762e867a6a}} 
+\index{Bot.\+py@{Bot.\+py}!on\+\_\+message@{on\+\_\+message}}
+\index{on\+\_\+message@{on\+\_\+message}!Bot.\+py@{Bot.\+py}}
+\subsubsection{\texorpdfstring{on\+\_\+message()}{on\_message()}}
+{\footnotesize\ttfamily def Bot.\+on\+\_\+message (\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+Displays messages sent in Discord server into terminal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message typed into Discord server \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_bot_8py_file_ae102ddd584d543f2d0094068564d2ac6}\label{_bot_8py_file_ae102ddd584d543f2d0094068564d2ac6}} 
+\index{Bot.\+py@{Bot.\+py}!unload@{unload}}
+\index{unload@{unload}!Bot.\+py@{Bot.\+py}}
+\subsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily def Bot.\+unload (\begin{DoxyParamCaption}\item[{}]{extension }\end{DoxyParamCaption})}
+
+
+
+Manually loads module(\+Cog) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extension} & name of module to be removed \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_bot_8py_file_ab1ee3ca7073422630b983d88fe750be3}\label{_bot_8py_file_ab1ee3ca7073422630b983d88fe750be3}} 
+\index{Bot.\+py@{Bot.\+py}!pass\+\_\+context@{pass\+\_\+context}}
+\index{pass\+\_\+context@{pass\+\_\+context}!Bot.\+py@{Bot.\+py}}
+\subsubsection{\texorpdfstring{pass\+\_\+context}{pass\_context}}
+{\footnotesize\ttfamily Bot.\+pass\+\_\+context}
+
+
+
+Bot privately messages user a list of commands the bot supports. 
+
+!help 

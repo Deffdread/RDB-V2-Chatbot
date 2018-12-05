@@ -1,0 +1,107 @@
+\hypertarget{class_comm_1_1_comm}{}\section{Comm.\+Comm Class Reference}
+\label{class_comm_1_1_comm}\index{Comm.\+Comm@{Comm.\+Comm}}
+
+
+Class for implementing communication methods.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_comm_1_1_comm_a91c2fd3fbf29a96b4ac142ccc702b36b}\label{class_comm_1_1_comm_a91c2fd3fbf29a96b4ac142ccc702b36b}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, client)
+\item 
+def \mbox{\hyperlink{class_comm_1_1_comm_ae68aa6861ade9320962ae25bbcd82885}{on\+\_\+message\+\_\+delete}} (self, message)
+\begin{DoxyCompactList}\small\item\em Bot notifies community server when message is deleted. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{class_comm_1_1_comm_a899c1f36041c59c1cf6e0529f468ba11}{on\+\_\+message\+\_\+edit}} (self, before, after)
+\begin{DoxyCompactList}\small\item\em Bot notifies community server when message is edited. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_comm_1_1_comm_ac14cfbcb7d52e0e72ebedfed36d49007}\label{class_comm_1_1_comm_ac14cfbcb7d52e0e72ebedfed36d49007}} 
+def {\bfseries on\+\_\+reaction\+\_\+add} (self, reaction, user)
+\item 
+\mbox{\Hypertarget{class_comm_1_1_comm_aea44c241bb9c9352bad624a802dcebe7}\label{class_comm_1_1_comm_aea44c241bb9c9352bad624a802dcebe7}} 
+def {\bfseries clear} (self, ctx, amount=5)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_comm_1_1_comm_a1288c91040e03daa2626636f17577c81}\label{class_comm_1_1_comm_a1288c91040e03daa2626636f17577c81}} 
+{\bfseries client}
+\item 
+\mbox{\Hypertarget{class_comm_1_1_comm_aa26d2488dd7ad08946c0d2fa425c01ba}\label{class_comm_1_1_comm_aa26d2488dd7ad08946c0d2fa425c01ba}} 
+{\bfseries O\+N\+D\+E\+L\+E\+TE}
+\item 
+\mbox{\Hypertarget{class_comm_1_1_comm_a5b84ca85af0e2897a145ddf916c0d07c}\label{class_comm_1_1_comm_a5b84ca85af0e2897a145ddf916c0d07c}} 
+\mbox{\hyperlink{class_comm_1_1_comm_a5b84ca85af0e2897a145ddf916c0d07c}{O\+N\+E\+D\+IT}}
+\begin{DoxyCompactList}\small\item\em Displays a particular news article fomr news.\+com.\+au about blackholes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_comm_1_1_comm_a88815e67cddb63a01efec08751e35425}\label{class_comm_1_1_comm_a88815e67cddb63a01efec08751e35425}} 
+int {\bfseries O\+N\+D\+E\+L\+E\+TE} = 0
+\item 
+\mbox{\Hypertarget{class_comm_1_1_comm_af6f2a8dfc4a209242b9a7ce2f91086cb}\label{class_comm_1_1_comm_af6f2a8dfc4a209242b9a7ce2f91086cb}} 
+int {\bfseries O\+N\+E\+D\+IT} = 0
+\item 
+\mbox{\hyperlink{class_comm_1_1_comm_a29104131fc8568f962827432fb1bab82}{pass\+\_\+context}}
+\begin{DoxyCompactList}\small\item\em Clears messages in channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for implementing communication methods. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_comm_1_1_comm_ae68aa6861ade9320962ae25bbcd82885}\label{class_comm_1_1_comm_ae68aa6861ade9320962ae25bbcd82885}} 
+\index{Comm\+::\+Comm@{Comm\+::\+Comm}!on\+\_\+message\+\_\+delete@{on\+\_\+message\+\_\+delete}}
+\index{on\+\_\+message\+\_\+delete@{on\+\_\+message\+\_\+delete}!Comm\+::\+Comm@{Comm\+::\+Comm}}
+\subsubsection{\texorpdfstring{on\+\_\+message\+\_\+delete()}{on\_message\_delete()}}
+{\footnotesize\ttfamily def Comm.\+Comm.\+on\+\_\+message\+\_\+delete (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+Bot notifies community server when message is deleted. 
+
+Prints \textquotesingle{}Message deleted by $<$user$>$\textquotesingle{} into server 
+\begin{DoxyParams}{Parameters}
+{\em message} & Message that was typed into Discord server \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_comm_1_1_comm_a899c1f36041c59c1cf6e0529f468ba11}\label{class_comm_1_1_comm_a899c1f36041c59c1cf6e0529f468ba11}} 
+\index{Comm\+::\+Comm@{Comm\+::\+Comm}!on\+\_\+message\+\_\+edit@{on\+\_\+message\+\_\+edit}}
+\index{on\+\_\+message\+\_\+edit@{on\+\_\+message\+\_\+edit}!Comm\+::\+Comm@{Comm\+::\+Comm}}
+\subsubsection{\texorpdfstring{on\+\_\+message\+\_\+edit()}{on\_message\_edit()}}
+{\footnotesize\ttfamily def Comm.\+Comm.\+on\+\_\+message\+\_\+edit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{before,  }\item[{}]{after }\end{DoxyParamCaption})}
+
+
+
+Bot notifies community server when message is edited. 
+
+Prints \textquotesingle{}Message edited by $<$user$>$\textquotesingle{} into server 
+\begin{DoxyParams}{Parameters}
+{\em message} & Message that was typed into Discord server \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_comm_1_1_comm_a29104131fc8568f962827432fb1bab82}\label{class_comm_1_1_comm_a29104131fc8568f962827432fb1bab82}} 
+\index{Comm\+::\+Comm@{Comm\+::\+Comm}!pass\+\_\+context@{pass\+\_\+context}}
+\index{pass\+\_\+context@{pass\+\_\+context}!Comm\+::\+Comm@{Comm\+::\+Comm}}
+\subsubsection{\texorpdfstring{pass\+\_\+context}{pass\_context}}
+{\footnotesize\ttfamily Comm.\+Comm.\+pass\+\_\+context\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Clears messages in channel. 
+
+Clears $<$amount$>$ messages in channel. Default is 5 messages after command unless specified. Called by !clears \mbox{[}int\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Discord chat context \\
+\hline
+{\em amount} & Number of message to delete. Default is 5. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_comm_8py}{Comm.\+py}}\end{DoxyCompactItemize}
