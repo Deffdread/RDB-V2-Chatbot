@@ -11,8 +11,8 @@ import os
 import Level
 
 #Bot specific code
-#TOKEN = 'NTA1ODQ5NDMwODA5NzcyMDMy.DrZmJg.sPGSaZgOM8GgSZvJYQ2MgiThutU'
-TOKEN = 'NTE2Mzc4ODU4Mzg0MTMwMDQ4.Dtyy6w.Gs8YYm6ygzMPJfEyoPfvie7MvFk'
+#TOKEN = 'BOT TOKEN FOUND IN DISCORD DEVELOPER PORTAL'
+TOKEN = ''
 
 #Must change this directory per user for level system
 mod = os.path.dirname(os.path.abspath(__file__))
